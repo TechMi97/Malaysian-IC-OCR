@@ -78,7 +78,7 @@ def upload_page():
 
             # extract the text and display it
             return render_template('upload.html',
-                                   msg='Successfully processed',
+                                   msg='IC Successfully processed',
                                    extracted_text=extracted_text,
                                    img_src=location)
     elif request.method == 'GET':
@@ -86,4 +86,4 @@ def upload_page():
 
 if __name__ == '__main__':
     # app.run()
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', debug=True,port=5000)
