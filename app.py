@@ -11,8 +11,13 @@ import cv2
 
 
 # define a folder to store and later serve the images
-UPLOAD_FOLDER = '\\static\\uploads\\'
 
+
+# root_dir = "C:\\Users\\Developer Tayub\\Desktop\\dataset\\LabelledRice\\Labelled"
+root_dir = "C:\\Users\\Developer Tayub\\Documents\\test\\static"
+
+
+UPLOAD_FOLDER = '/static/'
 # allow files of a specific type
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
@@ -51,16 +56,24 @@ def upload_page():
             gray = cv2.threshold(gray, 127, 255,
                 cv2.THRESH_TRUNC)[1]
             
-            filenamemaybe = "{}.png".format(os.getpid())
-            location ="C:\\Users\\Developer Tayub\\Documents\\test" + UPLOAD_FOLDER + filenamemaybe
+            # filenamemaybe = "{}.png".format(os.getpid())
 
+            # location ="C:\\Users\\Developer Tayub\\Documents\\test" + UPLOAD_FOLDER + filenamemaybe
+
+            location= os.path.join(root_dir,"file_ic_gray.png")    
+            location_ori= os.path.join(root_dir,"file_ic_ori.png")    
             print(location)
 
             cv2.imwrite(location, gray)
 
+            cv2.imwrite(location_ori, image)
+            new_filename= os.path.basename(location)
+
+
             extracted_text = pytesseract.image_to_string(Image.open(location))
             print(extracted_text)
-            # call the OCR function on it
+
+                        # call the OCR function on it
             #extracted_text = ocr_core(file)
 
             # extract the text and display it

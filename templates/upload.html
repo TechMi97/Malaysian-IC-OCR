@@ -16,14 +16,19 @@
         <input type=submit value=Upload>
    </form>
 
-   <h1>Result:</h1>
+   
    {% if img_src %}
-     <img src="{{ img_src }}">
+
+<h1>Original Image:</h1>
+   <img src="{{ url_for('static', filename = 'file_ic_ori.png') }}"  alt="previous" title="Previous" border="0">
+   <h1>Result:</h1>
+   <img src="{{ url_for('static', filename = 'file_ic_gray.png') }}"  alt="previous" title="Previous" border="0">
+     <!-- <img src="{{ img_src }}"> -->
    {% endif %}
   
    {% if extracted_text %}
-     <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
-  
+     <p> The extracted text from the image above is: </p>
+     <p><b> {{ extracted_text }} </b> </p>
    {% else %}
      The extracted text will be displayed here
    {% endif %}
