@@ -47,12 +47,12 @@ def upload_page():
             image = cv2.imread(file.filename)
 
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            
+
             gray = cv2.threshold(gray, 127, 255,
                 cv2.THRESH_TRUNC)[1]
             
-            # filename = "{}.png".format(os.getpid())
-            location ="C:\\Users\\Developer Tayub\\Documents\\test" + UPLOAD_FOLDER + file.filename
+            filenamemaybe = "{}.png".format(os.getpid())
+            location ="C:\\Users\\Developer Tayub\\Documents\\test" + UPLOAD_FOLDER + filenamemaybe
 
             print(location)
 
