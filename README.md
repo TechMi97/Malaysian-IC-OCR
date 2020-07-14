@@ -1,5 +1,8 @@
-# ID recognition using machine Learning techniques
-#Models Deployed using Flask REST API
+**ID recognition using machine Learning techniques
+
+*****Models Deployed using Flask REST API
+
+**Implementation
 
 app.py -  Implementation of OCR using Tesseract (includes the OCR part)
 app2.py - Implementation of OCR using  Character Region Awareness for Text Detection (CRAFT) for detection and CRNN (Resnet+LSTM+CTC) for recognition. 
